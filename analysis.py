@@ -109,12 +109,12 @@ plt.show()
 # Multivariate LASSO Regression
 print("\n--- Feature Selection: LASSO Regression ---")
 
-# Prepare full feature set with polynomial expansion for Frequency
+# Prepare full feature set with polynomial expansionfor Frequency
 X_full = english_young[['Familiarity', 'WordCategory', 'WrittenFrequency',
                         'WrittenSpokenFrequencyRatio', 'FamilySize',
                         'InflectionalEntropy', 'LengthInLetters', 'Voice']].copy()
 
-# Adding polynomial terms for WrittenFrequency (based on previous analysis favoring non-linear fit)
+# Adding polynomial terms for WrittenFrequency
 X_full['WrittenFrequency2'] = X_full['WrittenFrequency'] ** 2
 X_full['WrittenFrequency3'] = X_full['WrittenFrequency'] ** 3
 X_full['WrittenFrequency4'] = X_full['WrittenFrequency'] ** 4
